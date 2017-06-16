@@ -1,0 +1,1 @@
+"./utils/uartstdio.obj" "./startup_ccs.obj" "./mpu_fault.obj" -l"libc.a" -l"C:/StellarisWare/boards/ek-lm4f120xl/mpu_fault/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" "../mpu_fault_ccs.cmd" 

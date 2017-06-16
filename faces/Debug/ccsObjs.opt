@@ -1,0 +1,1 @@
+"./utils/uartstdio.obj" "./utils/softssi.obj" "./startup_ccs.obj" "./faces.obj" -l"libc.a" -l"C:/StellarisWare/boards/ek-lm4f120xl-boost-olimex-8x8/faces/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" "../faces_ccs.cmd" 

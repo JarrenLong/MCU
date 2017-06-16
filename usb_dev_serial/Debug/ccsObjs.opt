@@ -1,0 +1,1 @@
+"./utils/ustdlib.obj" "./utils/uartstdio.obj" "./usb_serial_structs.obj" "./usb_dev_serial.obj" "./startup_ccs.obj" -l"libc.a" -l"C:/StellarisWare/boards/ek-lm4f120xl/usb_dev_serial/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" -l"C:/StellarisWare/boards/ek-lm4f120xl/usb_dev_serial/ccs/../../../../usblib/ccs-cm4f/Debug/usblib-cm4f.lib" "../usb_dev_serial_ccs.cmd" 

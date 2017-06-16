@@ -1,0 +1,1 @@
+"./examples/ntsc.obj" "./examples/draw2.obj" "./examples/console.obj" "./examples/con_ntsc.obj" "./examples/color.obj" "./main.obj" -l"libc.a" -l"C:\StellarisWare\driverlib\ccs-cm4f\Debug\driverlib-cm4f.lib" -l"C:\StellarisWare\usblib\ccs-cm4f\Debug\usblib-cm4f.lib" "../lm4f120h5qr.cmd" 

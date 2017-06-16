@@ -1,0 +1,1 @@
+"./utils/uartstdio.obj" "./startup_ccs.obj" "./interrupts.obj" -l"libc.a" -l"C:/StellarisWare/boards/ek-lm4f120xl/interrupts/ccs/../../../../driverlib/ccs-cm4f/Debug/driverlib-cm4f.lib" "../interrupts_ccs.cmd" 

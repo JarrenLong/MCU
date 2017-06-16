@@ -1,0 +1,306 @@
+******************************************************************************
+                  TMS470 Linker PC v4.9.5                      
+******************************************************************************
+>> Linked Thu Apr 24 21:53:59 2014
+
+OUTPUT FILE NAME:   <faces.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00000ee1
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0000132c  0003ecd4  R  X
+  SRAM                  20000000   00008000  00000498  00007b68  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001330   00001330    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000fd8   00000fd8    r-x .text
+  00001244    00001244    000000b0   000000b0    r-- .const
+  000012f8    000012f8    00000038   00000038    r-- .cinit
+20000000    20000000    0000047c   00000000    rw-
+  20000000    20000000    00000400   00000000    rw- .stack
+  20000400    20000400    0000007c   00000000    rw- .bss
+2000047c    2000047c    0000001c   0000001c    rw-
+  2000047c    2000047c    0000001c   0000001c    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.text      0    0000026c    00000fd8     
+                  0000026c    0000023e     uartstdio.obj (.text:UARTprintf)
+                  000004aa    0000020c     softssi.obj (.text:SoftSSITimerTick)
+                  000006b6    00000002     startup_ccs.obj (.text:FaultISR)
+                  000006b8    000001d8     driverlib-cm4f.lib : sysctl.obj (.text:SysCtlClockGet)
+                  00000890    00000118     faces.obj (.text:main)
+                  000009a8    000000c8     driverlib-cm4f.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00000a70    000000a4     softssi.obj (.text:SoftSSIConfigSet)
+                  00000b14    0000009c     uartstdio.obj (.text:UARTgets)
+                  00000bb0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00000c4c    00000094                                   : auto_init.obj (.text)
+                  00000ce0    00000084     faces.obj (.text:PrintByteArray)
+                  00000d64    00000078     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  00000ddc    0000005e                                   : copy_decompress_rle.obj (.text)
+                  00000e3a    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  00000e3c    00000058     uartstdio.obj (.text:UARTStdioConfig)
+                  00000e94    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00000ee0    00000048                                   : boot.obj (.text)
+                  00000f28    00000044     uartstdio.obj (.text:UARTwrite)
+                  00000f6c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.text)
+                  00000fb0    00000042                                   : u_divt2.obj (.text)
+                  00000ff2    00000002     startup_ccs.obj (.text:NmiSR)
+                  00000ff4    0000003c     faces.obj (.text:SysTickIntHandler)
+                  00001030    0000003a     softssi.obj (.text:SoftSSIRxInt)
+                  0000106a    0000003a     softssi.obj (.text:SoftSSITxInt)
+                  000010a4    0000002e     driverlib-cm4f.lib : gpio.obj (.text:GPIODirModeSet)
+                  000010d2    00000024     softssi.obj (.text:SoftSSIDataPut)
+                  000010f6    00000020     faces.obj (.text:Reverse)
+                  00001116    00000020     softssi.obj (.text:SoftSSIBusy)
+                  00001136    00000002     --HOLE-- [fill = 0]
+                  00001138    00000020     uartstdio.obj (.text:UARTStdioInit)
+                  00001158    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00001170    00000018                                   : args_main.obj (.text)
+                  00001188    00000014     driverlib-cm4f.lib : systick.obj (.text:SysTickEnable)
+                  0000119c    00000014                        : systick.obj (.text:SysTickIntEnable)
+                  000011b0    00000012                        : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000011c2    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  000011d4    00000010     driverlib-cm4f.lib : systick.obj (.text:SysTickPeriodSet)
+                  000011e4    0000000e     softssi.obj (.text:SoftSSIEnable)
+                  000011f2    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00001200    0000000c     softssi.obj (.text:SoftSSIRxBufferSet)
+                  0000120c    0000000c     softssi.obj (.text:SoftSSITxBufferSet)
+                  00001218    0000000a     driverlib-cm4f.lib : gpio.obj (.text:GPIOPinWrite)
+                  00001222    00000008     softssi.obj (.text:SoftSSIClkGPIOSet)
+                  0000122a    00000008     softssi.obj (.text:SoftSSITxGPIOSet)
+                  00001232    00000006     startup_ccs.obj (.text:ResetISR)
+                  00001238    00000006     driverlib-cm4f.lib : sysctl.obj (.text:SysCtlDelay)
+                  0000123e    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.const     0    00001244    000000b0     
+                  00001244    0000006c     driverlib-cm4f.lib : sysctl.obj (.const:g_pulXtals)
+                  000012b0    00000028     faces.obj (.const:g_ucFaces)
+                  000012d8    0000001c     uartstdio.obj (.const)
+
+.cinit     0    000012f8    00000038     
+                  000012f8    0000000f     (.cinit..data.load) [load image, compression = rle]
+                  00001307    00000001     --HOLE-- [fill = 0]
+                  00001308    0000000c     (__TI_handler_table)
+                  00001314    00000004     --HOLE-- [fill = 0]
+                  00001318    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001320    00000010     (__TI_cinit_table)
+
+.stack     0    20000000    00000400     UNINITIALIZED
+                  20000000    00000400     --HOLE--
+
+.bss       0    20000400    0000007c     UNINITIALIZED
+                  20000400    00000048     faces.obj (.bss)
+                  20000448    00000034     faces.obj (.bss:g_sSoftSSI)
+
+.data      0    2000047c    0000001c     
+                  2000047c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20000484    00000008                                   : exit.obj (.data)
+                  2000048c    00000005     uartstdio.obj (.data)
+                  20000491    00000003     --HOLE--
+                  20000494    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001320 records: 2, size/record: 8, table size: 16
+	.data: load addr=000012f8, load size=0000000f bytes, run addr=2000047c, run size=0000001c bytes, compression=rle
+	.bss: load addr=00001318, load size=00000008 bytes, run addr=20000400, run size=0000007c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001308 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000f6d   C$$EXIT
+000010a5   GPIODirModeSet
+000009a9   GPIOPadConfigSet
+000011b1   GPIOPinTypeGPIOOutput
+00001219   GPIOPinWrite
+00000ce1   PrintByteArray
+00001233   ResetISR
+000010f7   Reverse
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+00001117   SoftSSIBusy
+00001223   SoftSSIClkGPIOSet
+00000a71   SoftSSIConfigSet
+000010d3   SoftSSIDataPut
+000011e5   SoftSSIEnable
+00001201   SoftSSIRxBufferSet
+000004ab   SoftSSITimerTick
+0000120d   SoftSSITxBufferSet
+0000122b   SoftSSITxGPIOSet
+000006b9   SysCtlClockGet
+00001239   SysCtlDelay
+00001189   SysTickEnable
+0000119d   SysTickIntEnable
+00000ff5   SysTickIntHandler
+000011d5   SysTickPeriodSet
+00000e3d   UARTStdioConfig
+00001139   UARTStdioInit
+00000b15   UARTgets
+0000026d   UARTprintf
+00000f29   UARTwrite
+20000400   __STACK_END
+00000400   __STACK_SIZE
+20000400   __STACK_TOP
+00001320   __TI_CINIT_Base
+00001330   __TI_CINIT_Limit
+00001308   __TI_Handler_Table_Base
+00001314   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00000c4d   __TI_auto_init
+000011f3   __TI_decompress_none
+0000123f   __TI_decompress_rle24
+00000000   __TI_static_base__
+000011c3   __TI_zero_init
+00000d65   __aeabi_memclr
+00000d65   __aeabi_memclr4
+00000d65   __aeabi_memclr8
+00000bb1   __aeabi_memcpy
+00000bb1   __aeabi_memcpy4
+00000bb1   __aeabi_memcpy8
+00000d67   __aeabi_memset
+00000d67   __aeabi_memset4
+00000d67   __aeabi_memset8
+00000fb1   __aeabi_uidivmod
+ffffffff   __binit__
+ffffffff   __c_args__
+20000000   __stack
+00001171   _args_main
+00000ee1   _c_int00
+20000484   _cleanup_ptr
+20000488   _dtors_ptr
+2000047c   _lock
+00001165   _nop
+0000115f   _register_lock
+00001159   _register_unlock
+20000480   _unlock
+00000f71   abort
+ffffffff   binit
+00000e95   copy_in
+00000f79   exit
+00000000   g_pfnVectors
+20000420   g_pusRxBuffer
+20000400   g_pusTxBuffer
+20000448   g_sSoftSSI
+000012b0   g_ucFaces
+20000440   g_ulFaceIndex
+00000891   main
+20000494   main_func_sp
+00000bb1   memcpy
+00000d6d   memset
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+0000026d   UARTprintf
+00000400   __STACK_SIZE
+000004ab   SoftSSITimerTick
+000006b9   SysCtlClockGet
+00000891   main
+000009a9   GPIOPadConfigSet
+00000a71   SoftSSIConfigSet
+00000b15   UARTgets
+00000bb1   __aeabi_memcpy
+00000bb1   __aeabi_memcpy4
+00000bb1   __aeabi_memcpy8
+00000bb1   memcpy
+00000c4d   __TI_auto_init
+00000ce1   PrintByteArray
+00000d65   __aeabi_memclr
+00000d65   __aeabi_memclr4
+00000d65   __aeabi_memclr8
+00000d67   __aeabi_memset
+00000d67   __aeabi_memset4
+00000d67   __aeabi_memset8
+00000d6d   memset
+00000e3d   UARTStdioConfig
+00000e95   copy_in
+00000ee1   _c_int00
+00000f29   UARTwrite
+00000f6d   C$$EXIT
+00000f71   abort
+00000f79   exit
+00000fb1   __aeabi_uidivmod
+00000ff5   SysTickIntHandler
+000010a5   GPIODirModeSet
+000010d3   SoftSSIDataPut
+000010f7   Reverse
+00001117   SoftSSIBusy
+00001139   UARTStdioInit
+00001159   _register_unlock
+0000115f   _register_lock
+00001165   _nop
+00001171   _args_main
+00001189   SysTickEnable
+0000119d   SysTickIntEnable
+000011b1   GPIOPinTypeGPIOOutput
+000011c3   __TI_zero_init
+000011d5   SysTickPeriodSet
+000011e5   SoftSSIEnable
+000011f3   __TI_decompress_none
+00001201   SoftSSIRxBufferSet
+0000120d   SoftSSITxBufferSet
+00001219   GPIOPinWrite
+00001223   SoftSSIClkGPIOSet
+0000122b   SoftSSITxGPIOSet
+00001233   ResetISR
+00001239   SysCtlDelay
+0000123f   __TI_decompress_rle24
+000012b0   g_ucFaces
+00001308   __TI_Handler_Table_Base
+00001314   __TI_Handler_Table_Limit
+00001320   __TI_CINIT_Base
+00001330   __TI_CINIT_Limit
+20000000   __stack
+20000400   __STACK_END
+20000400   __STACK_TOP
+20000400   g_pusTxBuffer
+20000420   g_pusRxBuffer
+20000440   g_ulFaceIndex
+20000448   g_sSoftSSI
+2000047c   _lock
+20000480   _unlock
+20000484   _cleanup_ptr
+20000488   _dtors_ptr
+20000494   main_func_sp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[79 symbols]

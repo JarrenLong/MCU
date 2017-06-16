@@ -1,0 +1,260 @@
+******************************************************************************
+                  TMS470 Linker PC v4.9.5                      
+******************************************************************************
+>> Linked Thu Apr 24 21:54:24 2014
+
+OUTPUT FILE NAME:   <udma_demo.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000011a9
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000014f8  0003eb08  R  X
+  SRAM                  20000000   00008000  00002b74  0000548c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000014f8   000014f8    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00001134   00001134    r-x .text
+  000013a0    000013a0    00000100   00000100    r-- .const
+  000014a0    000014a0    00000058   00000058    r-- .cinit
+20000000    20000000    00002b18   00000000    rw-
+  20000000    20000000    00002718   00000000    rw- .bss
+  20002718    20002718    00000400   00000000    rw- .stack
+20002b18    20002b18    0000005c   0000005c    rw-
+  20002b18    20002b18    0000005c   0000005c    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.text      0    0000026c    00001134     
+                  0000026c    000004c8     udma_demo.obj (.text:main)
+                  00000734    0000023e     uartstdio.obj (.text:UARTprintf)
+                  00000972    00000002     startup_ccs.obj (.text:FaultISR)
+                  00000974    000001d8     driverlib-cm4f.lib : sysctl.obj (.text:SysCtlClockGet)
+                  00000b4c    0000011c     udma_demo.obj (.text:InitUART1Transfer)
+                  00000c68    000000ac     udma_demo.obj (.text:UART1IntHandler)
+                  00000d14    0000009c     uartstdio.obj (.text:UARTgets)
+                  00000db0    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  00000e4c    00000094                                   : auto_init.obj (.text)
+                  00000ee0    00000074     cpu_usage.obj (.text:CPUUsageInit)
+                  00000f54    00000064     udma_demo.obj (.text:InitSWTransfer)
+                  00000fb8    0000005e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  00001016    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  00001018    0000005c     udma_demo.obj (.text:uDMAIntHandler)
+                  00001074    00000058     uartstdio.obj (.text:UARTStdioConfig)
+                  000010cc    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00001118    00000048     cpu_usage.obj (.text:CPUUsageTick)
+                  00001160    00000048     driverlib-cm4f.lib : gpio.obj (.text:GPIOPinConfigure)
+                  000011a8    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  000011f0    00000044     uartstdio.obj (.text:UARTwrite)
+                  00001234    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.text)
+                  00001278    00000042                                   : u_divt2.obj (.text)
+                  000012ba    00000002     startup_ccs.obj (.text:NmiSR)
+                  000012bc    00000034     udma_demo.obj (.text:SysTickHandler)
+                  000012f0    00000024     udma_demo.obj (.text:uDMAErrorHandler)
+                  00001314    00000020     uartstdio.obj (.text:UARTStdioInit)
+                  00001334    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  0000134c    00000018                                   : args_main.obj (.text)
+                  00001364    00000012                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  00001376    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  00001384    0000000a     driverlib-cm4f.lib : gpio.obj (.text:GPIOPinWrite)
+                  0000138e    00000006     startup_ccs.obj (.text:ResetISR)
+                  00001394    00000006     driverlib-cm4f.lib : sysctl.obj (.text:SysCtlDelay)
+                  0000139a    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.const     0    000013a0    00000100     
+                  000013a0    00000078     driverlib-cm4f.lib : gpio.obj (.const:g_pulGPIOBaseAddrs)
+                  00001418    0000006c                        : sysctl.obj (.const:g_pulXtals)
+                  00001484    0000001c     uartstdio.obj (.const)
+
+.cinit     0    000014a0    00000058     
+                  000014a0    00000032     (.cinit..data.load) [load image, compression = rle]
+                  000014d2    00000002     --HOLE-- [fill = 0]
+                  000014d4    0000000c     (__TI_handler_table)
+                  000014e0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000014e8    00000010     (__TI_cinit_table)
+
+.bss       0    20000000    00002718     UNINITIALIZED
+                  20000000    00001000     udma_demo.obj (.bss:g_ulDstBuf)
+                  20001000    00001000     udma_demo.obj (.bss:g_ulSrcBuf)
+                  20002000    00000400     udma_demo.obj (.bss:ucControlTable)
+                  20002400    00000100     udma_demo.obj (.bss:g_ucRxBufA)
+                  20002500    00000100     udma_demo.obj (.bss:g_ucRxBufB)
+                  20002600    00000100     udma_demo.obj (.bss:g_ucTxBuf)
+                  20002700    0000000c     cpu_usage.obj (.bss)
+                  2000270c    0000000c     udma_demo.obj (.bss)
+
+.stack     0    20002718    00000400     UNINITIALIZED
+                  20002718    00000400     --HOLE--
+
+.data      0    20002b18    0000005c     
+                  20002b18    00000020     cpu_usage.obj (.data)
+                  20002b38    00000020     udma_demo.obj (.data)
+                  20002b58    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data)
+                  20002b60    00000008                                   : exit.obj (.data)
+                  20002b68    00000005     uartstdio.obj (.data)
+                  20002b6d    00000003     --HOLE--
+                  20002b70    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000014e8 records: 2, size/record: 8, table size: 16
+	.data: load addr=000014a0, load size=00000032 bytes, run addr=20002b18, run size=0000005c bytes, compression=rle
+	.bss: load addr=000014e0, load size=00000008 bytes, run addr=20000000, run size=00002718 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000014d4 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00001235   C$$EXIT
+00000ee1   CPUUsageInit
+00001119   CPUUsageTick
+00001161   GPIOPinConfigure
+00001385   GPIOPinWrite
+00000f55   InitSWTransfer
+00000b4d   InitUART1Transfer
+0000138f   ResetISR
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+00000975   SysCtlClockGet
+00001395   SysCtlDelay
+000012bd   SysTickHandler
+00000c69   UART1IntHandler
+00001075   UARTStdioConfig
+00001315   UARTStdioInit
+00000d15   UARTgets
+00000735   UARTprintf
+000011f1   UARTwrite
+20002b18   __STACK_END
+00000400   __STACK_SIZE
+20002b18   __STACK_TOP
+000014e8   __TI_CINIT_Base
+000014f8   __TI_CINIT_Limit
+000014d4   __TI_Handler_Table_Base
+000014e0   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+00000e4d   __TI_auto_init
+00001377   __TI_decompress_none
+0000139b   __TI_decompress_rle24
+00000000   __TI_static_base__
+00001365   __TI_zero_init
+00000db1   __aeabi_memcpy
+00000db1   __aeabi_memcpy4
+00000db1   __aeabi_memcpy8
+00001279   __aeabi_uidivmod
+ffffffff   __binit__
+ffffffff   __c_args__
+20002718   __stack
+0000134d   _args_main
+000011a9   _c_int00
+20002b60   _cleanup_ptr
+20002b64   _dtors_ptr
+20002b58   _lock
+00001341   _nop
+0000133b   _register_lock
+00001335   _register_unlock
+20002b5c   _unlock
+00001239   abort
+ffffffff   binit
+000010cd   copy_in
+00001241   exit
+00000000   g_pfnVectors
+0000026d   main
+20002b70   main_func_sp
+00000db1   memcpy
+000012f1   uDMAErrorHandler
+00001019   uDMAIntHandler
+20002000   ucControlTable
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   __TI_static_base__
+00000000   g_pfnVectors
+00000001   __TI_args_main
+0000026d   main
+00000400   __STACK_SIZE
+00000735   UARTprintf
+00000975   SysCtlClockGet
+00000b4d   InitUART1Transfer
+00000c69   UART1IntHandler
+00000d15   UARTgets
+00000db1   __aeabi_memcpy
+00000db1   __aeabi_memcpy4
+00000db1   __aeabi_memcpy8
+00000db1   memcpy
+00000e4d   __TI_auto_init
+00000ee1   CPUUsageInit
+00000f55   InitSWTransfer
+00001019   uDMAIntHandler
+00001075   UARTStdioConfig
+000010cd   copy_in
+00001119   CPUUsageTick
+00001161   GPIOPinConfigure
+000011a9   _c_int00
+000011f1   UARTwrite
+00001235   C$$EXIT
+00001239   abort
+00001241   exit
+00001279   __aeabi_uidivmod
+000012bd   SysTickHandler
+000012f1   uDMAErrorHandler
+00001315   UARTStdioInit
+00001335   _register_unlock
+0000133b   _register_lock
+00001341   _nop
+0000134d   _args_main
+00001365   __TI_zero_init
+00001377   __TI_decompress_none
+00001385   GPIOPinWrite
+0000138f   ResetISR
+00001395   SysCtlDelay
+0000139b   __TI_decompress_rle24
+000014d4   __TI_Handler_Table_Base
+000014e0   __TI_Handler_Table_Limit
+000014e8   __TI_CINIT_Base
+000014f8   __TI_CINIT_Limit
+20002000   ucControlTable
+20002718   __stack
+20002b18   __STACK_END
+20002b18   __STACK_TOP
+20002b58   _lock
+20002b5c   _unlock
+20002b60   _cleanup_ptr
+20002b64   _dtors_ptr
+20002b70   main_func_sp
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[59 symbols]
